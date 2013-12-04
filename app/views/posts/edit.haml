@@ -1,6 +1,6 @@
-%h1 new post
+%h1 editing post
 
-= form_for :post, url: posts_path, method: :post do |f|
+= form_for :post, url: post_path(@post), method: :patch do |f|
   - if @post.errors.any?
     #error_explanation
       %h2
@@ -26,4 +26,3 @@
     =f.submit
 
 =link_to 'Back', posts_path
-

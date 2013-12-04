@@ -1,7 +1,11 @@
 ActivityServer::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   root 'navigate#home'
   get "navigate/home"
+  get "navigate/about" => "navigate#about", as: :about
+  #post "comments" => "comments#create", as: :post_comments
 
 
 end

@@ -3,9 +3,15 @@
   %tr
     %th Title
     %th Text
+    %th Commit
   -@posts.each do |post|
     %tr
       %td= post.title
       %td= post.text
+      %td= post.commit
+      %td=link_to 'show', post_path(post), method: :get
+      %td=link_to 'edit', edit_post_path(post), method: :get
+      %td=link_to 'destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?'}
 
 =link_to 'new post', new_post_path
+=link_to 'home page', root_path
